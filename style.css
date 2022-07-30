@@ -1,0 +1,98 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    to right bottom,
+    rgba(0, 89, 255, 0.836),
+    rgba(255, 17, 0, 0.938)
+  );
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 0 auto;
+  font-family: "Ubuntu Mono", monospace;
+  color: wheat;
+}
+
+.header {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+}
+
+.description {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  padding: 1em;
+  font-family: "Ubuntu Mono", monospace;
+  cursor: pointer;
+}
+
+.blue {
+  background-color: rgba(0, 89, 255, 0.836);
+}
+
+.red {
+  background-color: rgba(255, 17, 0, 0.938);
+}
+
+.coin-image {
+  width: 10%;
+  height: 20%;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 480px) {
+  .coin-image {
+    width: 30%;
+    height: 15%;
+  }
+
+  html {
+    font-size: 31.25%;
+  }
+}
+
+.removeDisplay {
+  display: none;
+}
+
+.counter {
+  font-size: 2rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.counter--1,
+.counter--2 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.blue-count,
+.red-count {
+  font-size: 3rem;
+}
