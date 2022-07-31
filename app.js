@@ -6,8 +6,8 @@ let btn = document.querySelector(".btn");
 let coin = document.querySelector(".coin-image");
 let changeClass = container.classList;
 let state = false;
-let blueCount = 0;
-let redCount = 0;
+let tailsCount = 0;
+let headsCount = 0;
 
 function randomizer() {
   let number = Math.round(Math.random() * 1);
@@ -19,7 +19,7 @@ function randomizer() {
     coin.setAttribute("src", "head.png");
     color.push("red");
     state = true;
-    redCount++;
+    headsCount++;
     document.querySelector(".red-count").textContent = redCount;
   } else {
     header.textContent = "tails wins!";
@@ -28,7 +28,7 @@ function randomizer() {
     coin.setAttribute("src", "tails.png");
     state = true;
     color.push("blue");
-    blueCount++;
+    tailsCount++;
     document.querySelector(".blue-count").textContent = blueCount;
   }
 }
