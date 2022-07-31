@@ -20,7 +20,7 @@ function randomizer() {
     color.push("red");
     state = true;
     headsCount++;
-    document.querySelector(".red-count").textContent = redCount;
+    document.querySelector(".red-count").textContent = headsCount;
   } else {
     header.textContent = "tails wins!";
     changeClass.toggle("blue");
@@ -29,7 +29,7 @@ function randomizer() {
     state = true;
     color.push("blue");
     tailsCount++;
-    document.querySelector(".blue-count").textContent = blueCount;
+    document.querySelector(".blue-count").textContent = tailsCount;
   }
 }
 
