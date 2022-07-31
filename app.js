@@ -1,9 +1,9 @@
 let color = [];
 let container = document.querySelector(".container");
-let header = document.querySelector(".header");
-let description = document.querySelector(".description");
+let header = document.querySelector(".header--back");
+let description = document.querySelector(".description--back");
 let btn = document.querySelector(".btn");
-let coin = document.querySelector(".coin-image");
+let coin = document.querySelector(".coin-image--back");
 let changeClass = container.classList;
 let state = false;
 let tailsCount = 0;
@@ -14,7 +14,7 @@ function randomizer() {
 
   if (number === 0) {
     header.textContent = "heads wins!";
-    changeClass.toggle("red");
+    // document.querySelector(".cards__side--back").classList.toggle("red");
     btn.textContent = "restart";
     coin.setAttribute("src", "head.png");
     color.push("red");
@@ -23,7 +23,7 @@ function randomizer() {
     document.querySelector(".red-count").textContent = headsCount;
   } else {
     header.textContent = "tails wins!";
-    changeClass.toggle("blue");
+    // document.querySelector(".cards__side--back").classList.toggle("blue");
     btn.textContent = "restart";
     coin.setAttribute("src", "tails.png");
     state = true;
@@ -40,12 +40,24 @@ btn.addEventListener("click", function () {
     flipSound.play();
     randomizer();
     description.classList.toggle("removeDisplay");
+    document
+      .querySelector(".cards__side--front")
+      .classList.toggle("cards__side--front-flip");
+    document
+      .querySelector(".cards__side--back")
+      .classList.toggle("cards__side--back-flip");
   } else {
+    document
+      .querySelector(".cards__side--front")
+      .classList.toggle("cards__side--front-flip");
+    document
+      .querySelector(".cards__side--back")
+      .classList.toggle("cards__side--back-flip");
     description.classList.toggle("removeDisplay");
     btn.textContent = "start";
-    changeClass.toggle(color[color.length - 1]);
+    // document
+    //   .querySelector(".cards__side--back")
+    //   .classList.toggle(color[color.length - 1]);
     state = false;
-    header.textContent = "coin flip";
-    coin.setAttribute("src", "coinflip.png");
   }
 });
